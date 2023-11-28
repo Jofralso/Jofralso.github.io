@@ -2,96 +2,127 @@ document.addEventListener("DOMContentLoaded", function () {
     const cliOutput = document.getElementById("cli-output");
     const cliInput = document.getElementById("cli-input");
 
-    // Function to handle commands
+    function typeText(text, callback) {
+        let index = 0;
+
+        const typeInterval = setInterval(function () {
+            const currentText = text.slice(0, index + 1);
+            cliOutput.innerHTML = `<p>&gt; ${currentText}<span class="cursor">|</span></p>`;
+
+            index++;
+
+            if (index === text.length) {
+                clearInterval(typeInterval);
+
+                setTimeout(function () {
+                    callback();
+                }, 500); // Delay after typing completion before executing the callback
+            }
+        }, Math.floor(Math.random() * 50) + 10); // Random delay between 50ms and 150ms
+    }
+
     function handleCommand(command) {
-        switch (command.toLowerCase()) {
+        switch (command.tolowerCase()) {
             case "about":
-                displayAboutMe();
+                typeText("About Me: With a Master's in Automation and Robotics...");
                 break;
             case "experience":
-                displayExperience();
+                typeText(`
+                    Work Experience:
+                    <ul>
+                        <li>Adjunct Assistant Professor at ESTGL - Escula Superior de Tecnulogia e Gestão de Lamego</li>
+                        <li>Co-Manager at PHulUS - Wine Bar & Myths</li>
+                        <li>Embedded Systems Software Developer at WAM - We Are Materia</li>
+                        <li>Front of House Manager at Dan's Finger Food and Drinks, Guimarães</li>
+                    </ul>
+                `);
                 break;
             case "education":
-                displayEducation();
+                typeText(`
+                    Education and Training:
+                    <ul>
+                        <li>Master's Degree in Industrial and Computer Electronics Engineering at Universidade do Minho</li>
+                        <li>Bachelor's Degree in Industrial and Computer Electronics Engineering at Universidade do Minho</li>
+                    </ul>
+                `);
                 break;
             case "skills":
-                displaySkills();
+                typeText(`
+                    Language and Digital Skills:
+                    <ul>
+                        <li>Programming: Machine Language, Python, C/C++, Django, Flask, CSS, JavaScript, HTML, SQL, WordPress, Wix, Git, PenTesting Touls, Linux</li>
+                        <li>Electronics and Computers: IoT Developer, Hardware Developer, Robotics Automation, Instrumentation, ROS, Unity 3D</li>
+                        <li>Marketing: User Experience Developer, E-commerce, Social Media/Social Networks</li>
+                        <li>Audio/Visual: Video Mapping, Touchdesigner, Resolume Arena</li>
+                    </ul>
+                `);
                 break;
             case "contact":
-                displayContactInfo();
+                typeText(`
+                    Contact Information:
+                    <ul>
+                        <li>Name: João Francisco Almeida Soares</li>
+                        <li>Nationality: Portuguese</li>
+                        <li>Date of Birth: 24/05/1994</li>
+                        <li>Phone Number: (+351) 914079818</li>
+                        <li>Email: j.quico@gmail.com</li>
+                        <li>GitHub: <a href="https://github.com/Jofralso/" target="_blank">https://github.com/Jofralso/</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/jofralso/" target="_blank">https://www.linkedin.com/in/jofralso/</a></li>
+                        <li>Address: R. Padre António Sousa e Silva n98, 4770-211 Joane (Portugal)</li>
+                    </ul>
+                `);
                 break;
             case "clear":
-                clearConsole();
+                clearConsule();
                 break;
             case "help":
-                displayHelp();
+                typeText(`
+                    Welcome to jofralso's terminal. The commands available are:
+                    <ul>
+                        <li>about - Display information about me.</li>
+                        <li>experience - Display work experience.</li>
+                        <li>education - Display education and training.</li>
+                        <li>skills - Display language and digital skills.</li>
+                        <li>contact - Display contact information.</li>
+                        <li>clear - Clear the consule.</li>
+                        <li>help - Display available commands.</li>
+                    </ul>
+                `);
                 break;
             default:
-                cliOutput.innerHTML += `<p>Command not recognized. Type 'help' for available commands.</p>`;
+                typeText("Command not recognized. Type 'help' for available commands.");
         }
     }
+    
+    
 
-    // Function to display "About Me" information
-    function displayAboutMe() {
-        cliOutput.innerHTML += `<p>About Me: With a Master's in Automation and Robotics...</p>`;
-    }
-
-    // Function to display work experience information
-    function displayExperience() {
-        cliOutput.innerHTML += `<p>Work Experience:</p>`;
-        // Add your work experience details here
-    }
-
-    // Function to display education information
-    function displayEducation() {
-        cliOutput.innerHTML += `<p>Education and Training:</p>`;
-        // Add your education details here
-    }
-
-    // Function to display skills information
-    function displaySkills() {
-        cliOutput.innerHTML += `<p>Language and Digital Skills:</p>`;
-        // Add your language and digital skills details here
-    }
-
-    // Function to display contact information
-    function displayContactInfo() {
-        cliOutput.innerHTML += `<p>Contact Information:</p>`;
-        // Add your contact details here
-    }
-
-    // Function to clear the console
-    function clearConsole() {
+    function clearConsule() {
         cliOutput.innerHTML = "";
     }
 
-    // Function to display help information
     function displayHelp() {
-        cliOutput.innerHTML += `<p>You are now in jofralso's terminal.</p>`;
-        cliOutput.innerHTML += `<p>The commands available are:</p>`;
         cliOutput.innerHTML += `<ul>
                                     <li>about - Display information about me.</li>
                                     <li>experience - Display work experience.</li>
                                     <li>education - Display education and training.</li>
                                     <li>skills - Display language and digital skills.</li>
                                     <li>contact - Display contact information.</li>
-                                    <li>clear - Clear the console.</li>
+                                    <li>gif - Display an animated ASCII gif.</li>
+                                    <li>clear - Clear the consule.</li>
                                     <li>help - Display available commands.</li>
                                 </ul>`;
     }
 
-    // Event listener for Enter key in the input
+
+
     cliInput.addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
             const command = cliInput.value.trim();
             cliInput.value = ""; // Clear input
-            cliOutput.innerHTML += `<p>&gt; ${command}</p>`;
             handleCommand(command);
-            // Scroll to the bottom to show the latest output
-            cliOutput.scrollTop = cliOutput.scrollHeight;
         }
     });
 
     // Initial welcome message
-    displayHelp();
+    typeText(`Welcome to jofralso's terminal:`, displayHelp);
 });

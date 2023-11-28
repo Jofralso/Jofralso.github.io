@@ -5,11 +5,11 @@ body {
     background-color: #000;
     color: #00ff00; /* Neon Green */
     font-family: 'BauSF', sans-serif;
-                                                                                                                                                
 }
-
+h1, h4{
+    margin:auto;
+}
 header {
-    height: 10vh;
     background-color: #000;
     color: #00ff00;
     text-align: center;
@@ -19,9 +19,8 @@ header {
 
 nav ul {
     list-style-type: none;
-    margin: 0;
+    margin: 1vh;
     padding: 0;
-    
 }
 
 nav ul li {
@@ -38,34 +37,33 @@ nav a {
 
 footer {
     height: 5vh;
-    font-size: 0.5rem ;
+    font-size: 0.5rem;
 }
 
 #cli {
-    
     background-color: #000;
     color: #00ff00;
-    padding: 20px;
-    margin: 20px;
+    padding: 5px;
+    margin: 5px;
     border-radius: 5px;
 }
 
 #cli-output {
     height: 55vh;
-
     overflow-y: auto;
     border: 1px solid #00ff00;
     padding: 10px;
     line-height: 1.4;
     font-size: 1.1rem; /* Adjust the font size as needed */
-}
- #cli-output ul {
-    list-style-type:none ;
 
 }
-#cli-output li::before{
-    content:"> ";
 
+#cli-output ul {
+    list-style-type: none;
+}
+
+#cli-output li::before {
+    content: "> ";
 }
 
 #cli-input {
@@ -77,8 +75,62 @@ footer {
     border-radius: 5px;
     background-color: #000;
     font-family: 'BauSF', sans-serif;
-
     color: #00ff00;
+    font-size: 1.1rem; /* Adjust the font size as needed */
+}
+/* Scrolling animation */
 
-    font-size: 10px; /* Adjust the font size as needed */
+/* Media Queries for Responsiveness */
+
+@media only screen and (max-width: 600px) {
+    header {
+        font-size: 0.8rem;
+    }
+
+    nav a {
+        font-size: x-small;
+    }
+
+    footer {
+        font-size: 0.4rem;
+    }
+
+    #cli-output {
+        font-size: 1rem;
+    }
+
+    #cli-input {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    header {
+        font-size: 1rem;
+    }
+
+    nav a {
+        font-size: small;
+    }
+
+    footer {
+        font-size: 0.5rem;
+    }
+
+    #cli-output {
+        font-size: 1.1rem;
+    }
+
+    #cli-input {
+        font-size: 10px;
+    }
+}
+.cursor {
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }
