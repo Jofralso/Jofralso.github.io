@@ -3,7 +3,7 @@ layout: cv
 title: João Francisco Almeida Soares's CV
 ---
 # João Francisco Almeida Soares
-Tech Enthusiast, Developer, Adjunct Assistant Professor.
+University Adjunct Assistant Professor, Tech Enthusiast, Developer.
 
 <div id="webaddress">
 <a href="j.quico@gmail.com">j.quico@gmail.com</a>
@@ -21,14 +21,13 @@ AI, ML, Cybersecurity, Robotics, IoT Technologies, and User Experience Developme
 
 ### Research Interests
 
-Digital Signal Processing, Automation and Control, Videomapping, AI Facial Features Detection, IoT Technologies.
+Digital Signal Processing, Automation and Control, Videomapping, AI Features Detection, IoT Technologies.
 
 ## Education
 
 `2012-2016`
 __Universidade do Minho, Guimarães, Portugal__
 Bachelor's Degree in Industrial and Computer Electronics Engineering
-- Final Grade: 12,167
 - Relevant Courses: Mathematical Fundamentals, Programming Languages (C/C++, Python, Machine Language), Automation and Robotics, Embedded Systems and Microcontrollers.
 
 `2016 - Current`
@@ -67,12 +66,6 @@ __Embedded Systems Software Developer, WAM - We Are Materia, Guimarães__
 - Active participation in creatively driven technologically oriented projects
 - Recording and capturing content for web marketing
 
-`2015 - 2018`
-__Front of House Manager, Dan's Finger Food and Drinks, Guimarães__
-- Contributed to company growth
-- Advanced to a higher role by showcasing management skills for a workspace and team
-- Received excellent customer service feedback
-- Self-taught in cocktail development and preparation
 
 ## Skills
 - **Programming:** Python, C/C++, Django, Flask, CSS, JavaScript, HTML, SQL, Git, PenTesting.
