@@ -78,10 +78,9 @@ __Embedded Systems Software Developer, WAM - We Are Materia, Guimarães__
 - **PAYVA D'OURO:** Videomapping using Resolume.
 - **DROWZINESS PREVENTION SYSTEM:** AI Facial Features Detection - Scientific Paper.
 - **Website Development for Brands:** Bo-Bell, ACE Teatro do Bolhão, My Cute Pooch, Multiusos de Guimarães, Cerveja Letra.
-- **LETRA Truck:** Personagit push origin --delete gh-pages
-lized food truck with interactive tech using Instagram with Spotify.
-- **ERT:** Tablet catalogs, protected websites, QR code development, and prototyping.
-- **LoRa Mesh Networks:** Teaching IoT technologies.
+- **LETRA Truck:** Personalized food truck with interactive tech using Instagram with Spotify.
+- **ERT:** Digital catalogs, protected content websites, QR code development and prototyping.
+- **LoRa Mesh Networks:** Teaching the development of IoT technologies.
 
 
 
